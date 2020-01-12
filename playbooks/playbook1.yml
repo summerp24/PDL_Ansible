@@ -13,3 +13,6 @@
         name: "{{ package }}"
         state: started
         enabled: yes
+      register: serv_status
+    
+    - debug: msg="{{ serv_status }}"
