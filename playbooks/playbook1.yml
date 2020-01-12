@@ -7,12 +7,14 @@
       yum:
         name: "{{ package }}"
         state: latest
-
+      notify: "Start the service"
+    
+  handlers: 
     - name: "Starting {{ package }} Service"
       service:
         name: "{{ package }}"
         state: started
         enabled: yes
       register: serv_status
-    
+      listen: "Start the service"
     - debug: msg="{{ serv_status }}"
