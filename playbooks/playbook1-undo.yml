@@ -1,0 +1,14 @@
+---
+- hosts: centos
+  tasks:
+    - name: Starting HTTPD Service
+      service:
+        name: httpd
+        state: stopped
+        
+    - name: Installing HTTP Package
+      yum:
+        name: httpd
+        state: absent
+
+
