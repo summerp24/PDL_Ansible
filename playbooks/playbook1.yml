@@ -10,12 +10,12 @@
       notify: "Starting {{ package }} Service"
     
   handlers: 
-    - name: "Starting {{ package }} Service"
+    - name: "Starting Service"
       service:
         name: "{{ package }}"
         state: started
         enabled: yes
-      listen: "Starting the Service"
+      listen: "Starting {{ package }} Service"
       register: serv_status
 
     - debug: msg="{{ serv_status }}"
