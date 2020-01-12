@@ -1,13 +1,15 @@
 ---
-- hosts: centos
+- hosts: {{ group }}
+  vars:
+    package: httpd
   tasks:
-    - name: Installing HTTP Package
+    - name: Installing {{ package }} Package
       yum:
-        name: httpd
+        name: {{ package }}
         state: latest
 
-    - name: Starting HTTPD Service
+    - name: Starting {{ package }} Service
       service:
-        name: httpd
+        name: {{ package }}
         state: started
         enabled: yes
