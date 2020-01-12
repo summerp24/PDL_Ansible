@@ -1,0 +1,19 @@
+---
+- hosts: "{{ group }}"
+  vars:
+    package: httpd
+  tasks:
+    - name: "Installing {{ package }} Package"
+      yum:
+        name: "{{ package }}"
+        state: latest
+      tags:
+        - install
+   
+    - name: "Starting Service"
+      service:
+        name: "{{ package }}"
+        state: started
+        enabled: yes
+      tags:
+        - start
