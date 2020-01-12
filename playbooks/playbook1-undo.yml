@@ -1,16 +1,16 @@
 ---
-- hosts: {{ group }}
+- hosts: "{{ group }}"
   vars:
     package: httpd
   tasks:
-    - name: Stopping {{ package }} Service
+    - name: Stopping "{{ package }}" Service
       service:
-        name: {{ package }}
+        name: "{{ package }}"
         state: stopped
 
-    - name: Removing {{ package }} Package
+    - name: Removing "{{ package }}" Package
       yum:
-        name: {{ package }}
+        name: "{{ package }}"
         state: absent
 
 

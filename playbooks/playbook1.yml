@@ -1,15 +1,15 @@
 ---
-- hosts: {{ group }}
+- hosts: "{{ group }}"
   vars:
     package: httpd
   tasks:
-    - name: Installing {{ package }} Package
+    - name: "Installing {{ package }} Package"
       yum:
-        name: {{ package }}
+        name: "{{ package }}"
         state: latest
 
-    - name: Starting {{ package }} Service
+    - name: "Starting {{ package }} Service"
       service:
-        name: {{ package }}
+        name: "{{ package }}"
         state: started
         enabled: yes
