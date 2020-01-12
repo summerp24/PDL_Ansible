@@ -3,7 +3,7 @@
   tasks:
     - name: "Creating users"
       user:
-        name: "{{ items }}"
+        name: "{{ item }}"
         state: present
       with_items:
         - user1
