@@ -1,0 +1,11 @@
+---
+- hosts: "{{ group }}"
+  tasks:
+    - name: "Creating users"
+      user:
+        name: "{{ items }}"
+        state: present
+      with_items:
+        - user1
+        - user2
+        - user3
