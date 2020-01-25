@@ -1,0 +1,6 @@
+---
+- name: Docker Setup
+  hosts: "{{ host_group }}"
+
+  roles:
+    - role: docker
