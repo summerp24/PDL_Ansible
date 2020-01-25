@@ -1,2 +1,5 @@
 [centos]
 172.31.21.175
+
+[docker]
+localhost
